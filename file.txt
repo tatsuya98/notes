@@ -1,0 +1,62 @@
+arrow function = another way of declaring a function which looks like this: const "name of function" = (parameters go here) => {}
+you can have as many parameters as you need as long you as you add a comma after each parameter name like this (x, y, z)
+the other way it is declared is inside a function like array.map which is called an anonymous function
+
+
+array.map and array.filter returns a new array with modified items depending on what the arrow function is doing
+array.reduce returns a single value
+therefore you can declare a varaible set it to the value of whats returned or it can be return value of a function call
+
+example:
+const "variable name goes here" = array.map or array.filter or arrary.reduce
+or
+function "name goes here"("parameters here if you need to use parameters"){
+    return arrary.map or array.filter or arrary.reduce
+}
+
+array.map( (item) => item * 2) = [1,2,3] becomes [2,4,6]
+array.map( (item, index) => item * 2) = [1,2,3] becomes [2,4,6] and  you now have access to the indexes of the items
+
+
+
+array.filter returns a new filtered array with modified items depending on what the arrow function is doing
+array.filter((item) => "condtion statement goes here") = an array with items that pass the condition statement
+array.filter((item) => item % 2 === 0) = [1,2,3,4,5,6] becomes [2,4,6]
+
+
+
+array.reduce returns the sum of all items in the array depending on the items in the array. for example if the array contains strings and the accumalator = "" it will concat the strings together
+array.reduce((accumulator, item) =>{
+    return accumulator + item
+}, "") ["hi" , "hello", "test"] should become "hihellotest" I would console.log(array.reduce) to check
+
+for numbers
+arrary.reduce((accumalator, item) => {
+    return accumalator + item
+}, 0)
+[1,2,3,4,5] becomes 15
+after the comma is where the start value goes
+
+
+exporting
+module.exports = {"functions or variable you want to export"}
+example:
+module.exports = {function} or {variable}
+or 
+module.exports = {key: value}
+                {test: function}
+when you want to export more than 1 item in the filter
+
+
+importing
+imports go at the top of the file, you can have more than one import in the file your importing to
+
+const "variable name here" = require('path goes here')
+
+object desturctred import
+its where you can gain access to the keys of the object you are exporting 
+which lets you just use the key without having to declare a variable and then using dot notation(x.y) to access its value
+
+example
+const {a, b} = require('path goes here')
+then you can use as a and b as they are without dot notation
