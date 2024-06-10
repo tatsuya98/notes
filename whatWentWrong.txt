@@ -1,0 +1,44 @@
+function(object, string){ (before changing object to array)
+    if(object[0].propertyName === string parameter we passed in){
+        return object[0].quantity
+    }
+}
+
+test("text goes here", () => { (test failed)
+    expect(countVeg({name: 'Parsnip', type: 'root', quantity: 4},'string goes here')).toBe(4);
+  });
+  test("text goes here", () => { (test passed)
+    expect(countVeg([{name: 'Parsnip', type: 'root', quantity: 4}],'string goes here')).toBe(4);
+  });
+
+  test1 (before changing object to array of objects ):
+   1. calling countVeg({name: 'Parsnip', type: 'root', quantity: 4},'property name here')
+        parameters that were passed in was an object and a string
+    2.   inside the function we are going into the if statement and checking object property using array syntax like this object[0] but we can't access objects using any number.
+    we have to access it using the dot notation like this object.propertyName ,
+    or object[parameterName] (what you pass into the function) ,
+    or object[variableName] (what you initialise using let or const keyword ),
+    or object[string]
+    (there might be more ways but I'm not sure).
+    Because of this the if check was failing therefore the logic inside would not be run. 
+    Therefore test1 was returning undefined from the function call instead  of the total quantity.
+
+    after changing object in test 1 to array of objects and in countVeg
+    test("text goes here", () => {
+    expect(countVeg([{name: 'Parsnip', type: 'root', quantity: 4}],'string goes here')).toBe(4);
+  });
+    function countVeg (array, string){
+        if(array[0].propertyName === string){
+            executes logic inside
+        }
+    }
+ we can now access the object inside the array using array[0] when we have 1 item in the array or using loops for(), array.forEach() when we have mulitple
+ therefore when we get to if statement check when access using dot notation it won't give null but the value of propertyName we accessed and check with the string. 
+ Entering  the if statement  when its true and run the logic inside.
+
+ making both tests pass
+
+
+
+
+                                                                             
